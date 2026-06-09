@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>UKM Financial Hub – Uttam Kumar Maji</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+<div class="card-wrapper mx-auto">
+
+  <!-- ── BANNER ─────────────────────────────────── -->
+  <div class="banner">
+    <div class="logo-row">
+      <div class="logo-icon"><img src="/images/logo-Photoroom(navy-blue).png" alt="logo-image" style="height: 100%; width: 120%;"></div>
+      <div>
+        <div class="logo-text">UKM Financial Hub</div>
+        <div class="logo-sub">Trusted Since 25+ Years</div>
+      </div>
+    </div>
+
+    <div class="photo-wrap text-center">
+      <div class="photo-ring mx-auto">
+        <div class="photo-inner">
+          <span><img src="/images/ukm_image.png" alt="Uttam Kumar Maji" /></span>
+        </div>
+      </div>
+      <h1 class="person-name mt-3">Uttam Kumar Maji</h1>
+      <span class="title-tag">Financial Advisor &amp; Insurance Expert</span>
+    </div>
+  </div><!-- /banner -->
+
+  <!-- ── STATS ──────────────────────────────────── -->
+  <div class="stats-row mx-3 mt-3">
+    <div class="stat-item">
+      <div class="stat-val">25+</div>
+      <div class="stat-label">Years Exp.</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">₹45Cr+</div>
+      <div class="stat-label">Claims Settled</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val">2.5K+</div>
+      <div class="stat-label">Families Secured</div>
+    </div>
+  </div>
+
+  <!-- ── BODY ───────────────────────────────────── -->
+  <div class="body-section px-3">
+
+    <!-- Bio -->
+    <div class="bio-box mt-4">
+      <p class="bio-text">
+        With <span class="gold-text">25+ years of dedicated experience</span> in financial services,
+        I help individuals and businesses make confident, informed decisions.
+        From protecting your family with the right insurance to growing your wealth through
+        smart investments — <span class="gold-text">your financial security is my mission.</span>
+      </p>
+    </div>
+
+    <!-- Services -->
+    <div class="section-title mt-4">Our Services</div>
+    <div class="row g-2 mt-1">
+      <% const services = [
+        { icon: '🛡️', label: 'LIC Insurance' },
+        { icon: '📈', label: 'Mutual Funds' },
+        { icon: '🏥', label: 'Health Insurance' },
+        { icon: '🚗', label: 'Motor Insurance' },
+        { icon: '🏍️', label: 'Bike Insurance' },
+        { icon: '🏢', label: 'Commercial Ins.' },
+        { icon: '📊', label: 'Financial Planning' },
+      ]; %>
+      <% services.forEach(s => { %>
+        <div class="col-4 <%= s.label === 'Financial Planning' ? 'col-12 d-flex justify-content-center' : '' %>">
+          <div class="service-chip text-center <%= s.label === 'Financial Planning' ? 'w-50' : 'w-100' %>">
+            <div class="service-icon"><%= s.icon %></div>
+            <div><%= s.label %></div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+
+    <!-- Social Links -->
+    <div class="section-title mt-4">Connect With Us</div>
+    <div class="socials-row mt-2">
+
+      <a href="https://youtube.com/@YOUR_CHANNEL" target="_blank" class="social-btn sb-yt" title="YouTube">
+        <!-- YouTube SVG -->
+        <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1C4.5 20.5 12 20.5 12 20.5s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+      </a>
+
+      <a href="https://facebook.com/YOUR_PAGE" target="_blank" class="social-btn sb-fb" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/></svg>
+      </a>
+
+      <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank" class="social-btn sb-li" title="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM3.56 20.45h3.56V9H3.56v11.45z"/></svg>
+      </a>
+
+      <a href="https://instagram.com/YOUR_HANDLE" target="_blank" class="social-btn sb-ig" title="Instagram">
+        <svg viewBox="0 0 24 24">
+          <defs>
+            <linearGradient id="ig-g" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#f09433"/>
+              <stop offset="50%" style="stop-color:#dc2743"/>
+              <stop offset="100%" style="stop-color:#bc1888"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#ig-g)" d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85 0 3.2-.01 3.58-.07 4.85-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07-3.2 0-3.58-.01-4.85-.07-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12c0-3.2.01-3.58.07-4.85C2.38 3.86 3.9 2.31 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.7.07 7.05.01 8.33 0 8.74 0 12c0 3.26.01 3.67.07 4.95.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24c3.26 0 3.67-.01 4.95-.07 4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95 0-3.26-.01-3.67-.07-4.95-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32A6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
+        </svg>
+      </a>
+
+      <a href="https://wa.me/919932227686" target="_blank" class="social-btn sb-wa" title="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.48-1.76-1.66-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.48-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.09 3.2 5.07 4.48.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35zM12.05 21.8h-.03a9.87 9.87 0 0 1-5.02-1.37l-.36-.21-3.73.98 1-3.65-.24-.38A9.86 9.86 0 0 1 2.16 12c0-5.44 4.43-9.87 9.88-9.87 2.64 0 5.12 1.03 6.98 2.9a9.82 9.82 0 0 1 2.89 6.98c-.01 5.44-4.43 9.79-9.86 9.79zM20.52 3.49A11.82 11.82 0 0 0 12.04 0C5.45 0 .08 5.37.07 11.97c0 2.11.55 4.17 1.6 5.98L0 24l6.2-1.63a11.93 11.93 0 0 0 5.83 1.48h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-1.24-6.2-3.49-8.39z"/></svg>
+      </a>
+
+    </div><!-- /socials -->
+
+    <!-- Contact -->
+    <div class="section-title mt-4">Contact Us</div>
+    <div class="d-flex flex-column gap-2 mt-2">
+      <a href="tel:+919932227686" class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div class="contact-detail">
+          <div class="contact-label">Call / WhatsApp</div>
+          <div class="contact-val">+91 99322 27686</div>
+        </div>
+        <span class="contact-arrow">›</span>
+      </a>
+      <a href="mailto:uttamkr.lici@gmail.com" class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-detail">
+          <div class="contact-label">Email</div>
+          <div class="contact-val">uttamkr.lici@gmail.com</div>
+        </div>
+        <span class="contact-arrow">›</span>
+      </a>
+    </div>
+
+    <!-- Reviews -->
+    <div class="section-title mt-4">Client Reviews</div>
+
+    <!-- Dynamic reviews from DB -->
+    <div id="reviewsList" class="d-flex flex-column gap-3 mt-2">
+      <% if (reviews && reviews.length > 0) { %>
+        <% reviews.forEach(r => { %>
+          <div class="review-card">
+            <div class="stars"><%= '★'.repeat(r.stars) %><%= '☆'.repeat(5 - r.stars) %></div>
+            <p class="review-text">"<%= r.message %>"</p>
+            <div class="reviewer">
+              <div class="reviewer-avatar"><%= r.name.charAt(0).toUpperCase() %></div>
+              <div>
+                <div class="reviewer-name"><%= r.name %></div>
+                <div class="reviewer-loc"><%= r.location || 'West Bengal' %></div>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <p class="text-center" style="color:var(--muted); font-size:13px; padding: 10px 0;">Be the first to leave a review!</p>
+      <% } %>
+    </div>
+
+    <!-- Write Review CTA -->
+    <div class="review-cta mt-3" onclick="openModal()">
+      <div class="review-cta-btn">⭐ Write a Review</div>
+      <p>Share your experience with UKM Financial Hub</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer mt-4">
+      <div class="footer-logo">UKM Financial Hub</div>
+      <div class="footer-tagline">Securing Futures. Building Trust.</div>
+      <div class="footer-copy">© 2025 UKM Financial Hub · All Rights Reserved</div>
+    </div>
+
+    <div style="height:80px;"></div>
+  </div><!-- /body-section -->
+
+  <!-- ── SHARE BAR ───────────────────────────────── -->
+  <div class="share-bar">
+    <button class="share-btn share-primary" onclick="shareCard()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      Share This Card
+    </button>
+    <button class="share-btn share-secondary" onclick="copyLink()" title="Copy link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+    </button>
+  </div>
+
+</div><!-- /card-wrapper -->
+
+<!-- ── REVIEW MODAL ────────────────────────────────────────── -->
+<div class="modal-overlay" id="reviewModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h3 class="modal-title">Write a Review</h3>
+
+    <div class="modal-stars" id="starRow">
+      <span class="modal-star" data-v="1">⭐</span>
+      <span class="modal-star" data-v="2">⭐</span>
+      <span class="modal-star" data-v="3">⭐</span>
+      <span class="modal-star" data-v="4">⭐</span>
+      <span class="modal-star" data-v="5">⭐</span>
+    </div>
+
+    <input  class="modal-input" id="rName"    placeholder="Your name *" />
+    <input  class="modal-input" id="rLoc"     placeholder="Your city / location" />
+    <textarea class="modal-input" id="rText"  placeholder="Share your experience... *" rows="3"></textarea>
+
+    <div id="formError" class="form-error d-none"></div>
+
+    <button class="modal-submit" onclick="submitReview()">Submit Review</button>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast-msg" id="toast"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="/js/main.js"></script>
+</body>
+</html>

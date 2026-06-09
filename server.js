@@ -24,7 +24,8 @@ app.set("views", path.join(__dirname, "views"));
 
 // ── Database ──────────────────────────────────────────────────
 const MONGO_URI =
-  process.env.MONGO_URI || "mongodb://127.0.0.1:27017/ukm_financial";
+  process.env.MONGO_URI ||
+  "mongodb+srv://abhinandanmaji02_db_user:ukm_financial_digital_card@portfolio.jfqjjnh.mongodb.net/?appName=PortFolio";
 
 mongoose
   .connect(MONGO_URI)

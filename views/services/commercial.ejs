@@ -1,0 +1,79 @@
+<%- include('../partials/service-head', { pageTitle: 'Commercial Insurance' }) %>
+
+<div class="svc-wrapper">
+
+  <div class="svc-back-bar">
+    <a href="/" class="svc-back-btn">&#8592;</a>
+    <div>
+      <div class="svc-back-title">Commercial Insurance</div>
+      <div class="svc-back-sub">Business & Trade Protection</div>
+    </div>
+  </div>
+
+  <div class="svc-hero">
+    <div class="svc-hero-icon">🏢</div>
+    <h1 class="svc-hero-title">Protect Your Business</h1>
+    <p class="svc-hero-sub">Custom insurance plans for every business type</p>
+  </div>
+
+  <div class="sec-label">We Cover All Business Types</div>
+  <div class="provider-row">
+    <div class="provider-chip">🏪 Shop</div>
+    <div class="provider-chip">🏭 Factory</div>
+    <div class="provider-chip">💼 Office</div>
+    <div class="provider-chip">🚚 Commercial Vehicle</div>
+    <div class="provider-chip">🏗️ Warehouse</div>
+    <div class="provider-chip">🏨 Hotel</div>
+    <div class="provider-chip">🔥 Fire insurance</div>
+  </div>
+
+  <div class="sec-label">What's Covered</div>
+  <div class="plan-card">
+    <div class="plan-name">🏪 Shop / Retail Insurance</div>
+    <ul class="plan-pts">
+      <li>Fire & allied perils cover</li>
+      <li>Burglary & theft protection</li>
+      <li>Stock & inventory damage</li>
+      <li>Loss of profit during shutdown</li>
+    </ul>
+  </div>
+  <div class="plan-card">
+    <div class="plan-name">🏭 Factory / Industrial Insurance</div>
+    <ul class="plan-pts">
+      <li>Machinery breakdown cover</li>
+      <li>Boiler & pressure vessel insurance</li>
+      <li>Workers' compensation cover</li>
+      <li>Product liability insurance</li>
+    </ul>
+  </div>
+  <div class="plan-card">
+    <div class="plan-name">🚚 Commercial Vehicle Insurance</div>
+    <ul class="plan-pts">
+      <li>Goods in transit cover</li>
+      <li>Third party liability</li>
+      <li>Driver personal accident cover</li>
+      <li>Fleet insurance available</li>
+    </ul>
+  </div>
+
+  <div class="sec-label">Get a Free Quote</div>
+  <div class="query-box">
+    <p class="query-title">📩 Commercial Insurance Query</p>
+    <div class="mb-2"><input class="svc-input" id="ci-bname"  type="text" placeholder="Business / firm name *" /></div>
+    <div class="mb-2"><input class="svc-input" id="ci-mobile" type="tel"  placeholder="Mobile number *" /></div>
+    <div class="mb-2">
+      <select class="svc-input" id="ci-btype">
+        <option value="Other">Type of business</option>
+        <option value="Shop">Shop / Retail</option>
+        <option value="Factory">Factory / Industry</option>
+        <option value="Office">Office</option>
+        <option value="Commercial Vehicle">Commercial Vehicle</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="mb-3"><textarea class="svc-input" id="ci-query" rows="3" placeholder="Describe your business & requirements *"></textarea></div>
+    <div id="ci-error" class="form-err d-none"></div>
+    <button class="svc-submit-btn" onclick="submitQuery('ci')">Get Free Quote</button>
+  </div>
+
+<%- include('../partials/service-foot') %>

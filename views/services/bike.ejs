@@ -1,0 +1,75 @@
+<%- include('../partials/service-head', { pageTitle: 'Bike Insurance' }) %>
+
+<div class="svc-wrapper">
+
+  <div class="svc-back-bar">
+    <a href="/" class="svc-back-btn">&#8592;</a>
+    <div>
+      <div class="svc-back-title">Bike Insurance</div>
+      <div class="svc-back-sub">Two-Wheeler Protection</div>
+    </div>
+  </div>
+
+  <div class="svc-hero">
+    <div class="svc-hero-icon">🏍️</div>
+    <h1 class="svc-hero-title">Ride Without Worry</h1>
+    <p class="svc-hero-sub">Two-wheeler cover starting from ₹700/year</p>
+  </div>
+
+  <div class="sec-label">Starting Price</div>
+  <div class="price-highlight-card">
+    <div class="price-big">₹700<span>/year</span></div>
+    <div class="price-sub">Third party plan · Comprehensive from ₹2,000/year</div>
+  </div>
+
+  <div class="sec-label">Plan Types</div>
+  <div class="plan-card">
+    <div class="plan-name">🛡️ Comprehensive Plan</div>
+    <ul class="plan-pts">
+      <li>Accidental damage to own bike</li>
+      <li>Theft protection & fire cover</li>
+      <li>Third party liability included</li>
+      <li>Personal accident cover for rider</li>
+      <li>Cashless repairs at network garages</li>
+      <li>Roadside assistance add-on</li>
+    </ul>
+  </div>
+  <div class="plan-card">
+    <div class="plan-name">📋 Third Party Plan</div>
+    <ul class="plan-pts">
+      <li>Mandatory by law for all bikes</li>
+      <li>Covers damage/injury to third party</li>
+      <li>Most affordable option</li>
+      <li>Starting from just ₹700/year</li>
+    </ul>
+  </div>
+
+  <div class="sec-label">Add-On Covers</div>
+  <div class="provider-row">
+    <div class="provider-chip">Zero Depreciation</div>
+    <div class="provider-chip">Pillion Rider Cover</div>
+    <div class="provider-chip">Roadside Assist</div>
+    <div class="provider-chip">NCB Protect</div>
+  </div>
+
+  <div class="sec-label">Get a Free Quote</div>
+  <div class="query-box">
+    <p class="query-title">📩 Bike Insurance Query</p>
+    <div class="mb-2"><input class="svc-input" id="bi-name"   type="text" placeholder="Your full name *" /></div>
+    <div class="mb-2"><input class="svc-input" id="bi-mobile" type="tel"  placeholder="Mobile number *" /></div>
+    <div class="mb-2"><input class="svc-input" id="bi-num"    type="text" placeholder="Bike number (e.g. WB32CD5678)" /></div>
+    <div class="mb-2"><input class="svc-input" id="bi-model"  type="text" placeholder="Bike model (e.g. Honda Activa 6G)" /></div>
+    <div class="mb-2">
+      <select class="svc-input" id="bi-plan">
+        <option value="Not Sure">Select plan type</option>
+        <option value="Comprehensive">Comprehensive</option>
+        <option value="Third Party">Third Party</option>
+        <option value="Not Sure">Help me choose</option>
+      </select>
+    </div>
+    <div class="mb-3"><textarea class="svc-input" id="bi-query" rows="3" placeholder="Your query *"></textarea></div>
+    <div id="bi-error" class="form-err d-none"></div>
+    <button class="svc-submit-btn" onclick="submitQuery('bi')">Get Free Quote</button>
+  </div>
+
+<%- include('../partials/service-foot') %>

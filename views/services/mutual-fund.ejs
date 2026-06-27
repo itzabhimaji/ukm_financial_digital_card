@@ -1,0 +1,98 @@
+<%- include('../partials/service-head', { pageTitle: 'Mutual Funds' }) %>
+
+<div class="svc-wrapper">
+
+  <!-- Back Bar -->
+  <div class="svc-back-bar">
+    <a href="/" class="svc-back-btn">&#8592;</a>
+    <div>
+      <div class="svc-back-title">Mutual Funds</div>
+      <div class="svc-back-sub">Top Performing Funds · Expert Guidance</div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="svc-hero">
+    <div class="svc-hero-icon">📈</div>
+    <h1 class="svc-hero-title">Grow Your Wealth</h1>
+    <p class="svc-hero-sub">SIP starting from just ₹500/month</p>
+  </div>
+
+  <!-- Top Funds Table -->
+  <div class="sec-label">Top Mutual Funds · Historical Returns</div>
+  <div class="mf-table-wrap">
+    <table class="mf-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Fund Name</th>
+          <th>1yr</th>
+          <th>3yr</th>
+          <th>5yr</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="mf-rank">1</td><td>Quant Small Cap</td><td class="ret">42%</td><td class="ret">38%</td><td class="ret">38.4%</td></tr>
+        <tr><td class="mf-rank">2</td><td>Nippon India Small Cap</td><td class="ret">28%</td><td class="ret">31%</td><td class="ret">34.2%</td></tr>
+        <tr><td class="mf-rank">3</td><td>Parag Parikh Flexi Cap</td><td class="ret">24%</td><td class="ret">26%</td><td class="ret">28.6%</td></tr>
+        <tr><td class="mf-rank">4</td><td>Mirae Asset Large Cap</td><td class="ret">18%</td><td class="ret">20%</td><td class="ret">22.1%</td></tr>
+        <tr><td class="mf-rank">5</td><td>HDFC Mid-Cap Opp.</td><td class="ret">30%</td><td class="ret">29%</td><td class="ret">26.8%</td></tr>
+        <tr><td class="mf-rank">6</td><td>Axis Bluechip Fund</td><td class="ret">16%</td><td class="ret">17%</td><td class="ret">18.3%</td></tr>
+      </tbody>
+    </table>
+    <p class="mf-note">* Past returns are indicative. Mutual fund investments are subject to market risks.</p>
+  </div>
+
+  <!-- Long Term Returns -->
+  <div class="sec-label">Long Term Performance</div>
+  <div class="plan-card">
+    <div class="plan-name">📊 10 & 15 Year Returns</div>
+    <ul class="plan-pts">
+      <li>Nippon India Small Cap Fund – 10yr avg: <strong style="color:var(--gold-l)">21.30% </strong></li>
+      <li>PQuant Small Cap Fund – 10yr avg: <strong style="color:var(--gold-l)">19.86% </strong></li>
+      <li>SBI Small Cap Fund – 15yr avg: <strong style="color:var(--gold-l)">20.15% </strong></li>
+      <li>DSP Small Cap Fund – 15yr avg: <strong style="color:var(--gold-l)">19.56% </strong></li>
+    </ul>
+  </div>
+
+  <!-- Register Link -->
+  <div class="sec-label">Start Investing</div>
+  <div class="invest-link-box">
+    <p class="invest-link-title">🔗 Register & Invest Directly</p>
+    <p class="invest-link-sub">Click below to register your investor profile and start your SIP with expert guidance from Uttam Kumar Maji.</p>
+    <a href="https://www.lic.com" target="_blank" class="invest-link-btn">Register on LIC ULIP Portal ↗</a>
+    <a href="https://www.india.com" target="_blank" class="invest-link-btn mt-2">Register on MF india ↗</a>
+  </div>
+
+  <!-- Query Section -->
+  <div class="sec-label">Ask a Query</div>
+  <div class="query-box">
+    <p class="query-title">📩 Mutual Fund Query</p>
+
+    <div class="mb-2">
+      <input class="svc-input" id="mf-name" type="text" placeholder="Your full name *" />
+    </div>
+    <div class="mb-2">
+      <input class="svc-input" id="mf-mobile" type="tel" placeholder="Mobile number *" />
+    </div>
+    <div class="mb-2">
+      <input class="svc-input" id="mf-amount" type="text" placeholder="Investment amount (e.g. ₹5000/month)" />
+    </div>
+    <div class="mb-2">
+      <select class="svc-input" id="mf-type">
+        <option value="Not Sure">Investment type</option>
+        <option value="SIP">SIP (Monthly)</option>
+        <option value="Lumpsum">Lumpsum</option>
+        <option value="Both">Both</option>
+        <option value="Not Sure">Not Sure</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <textarea class="svc-input" id="mf-query" rows="3" placeholder="Write your query here *"></textarea>
+    </div>
+
+    <div id="mf-error" class="form-err d-none"></div>
+    <button class="svc-submit-btn" onclick="submitQuery('mf')">Submit Query</button>
+  </div>
+
+<%- include('../partials/service-foot') %>

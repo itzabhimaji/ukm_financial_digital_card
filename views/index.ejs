@@ -70,20 +70,21 @@
     <div class="section-title mt-4">Our Services</div>
     <div class="row g-2 mt-1">
       <% const services = [
-        { icon: '🛡️', label: 'LIC Insurance' },
-        { icon: '📈', label: 'Mutual Funds' },
-        { icon: '🏥', label: 'Health Insurance' },
-        { icon: '🚗', label: 'Motor Insurance' },
-        { icon: '🏍️', label: 'Bike Insurance' },
-        { icon: '🏢', label: 'Commercial Ins.' },
-        { icon: '📊', label: 'Financial Planning' },
+        { icon: '🛡️', label: 'LIC Insurance',      route: '/services/lic' },
+        { icon: '📈', label: 'Mutual Funds',         route: '/services/mutual-fund' },
+        { icon: '🏥', label: 'Health Insurance',     route: '/services/health' },
+        { icon: '🚗', label: 'Motor Insurance',      route: '/services/motor' },
+        { icon: '🏍️', label: 'Bike Insurance',      route: '/services/bike' },
+        { icon: '🏢', label: 'Commercial Ins.',      route: '/services/commercial' },
+        { icon: '📊', label: 'Financial Planning',   route: '/services/financial-planning' },
       ]; %>
       <% services.forEach(s => { %>
         <div class="col-4 <%= s.label === 'Financial Planning' ? 'col-12 d-flex justify-content-center' : '' %>">
-          <div class="service-chip text-center <%= s.label === 'Financial Planning' ? 'w-50' : 'w-100' %>">
+          <a href="<%= s.route %>"
+            class="service-chip text-center text-decoration-none <%= s.label === 'Financial Planning' ? 'w-50' : 'w-100' %>">
             <div class="service-icon"><%= s.icon %></div>
             <div><%= s.label %></div>
-          </div>
+          </a>
         </div>
       <% }); %>
     </div>
@@ -144,35 +145,33 @@
       </a>
     </div>
 
-    <!-- Reviews -->
-    <div class="section-title mt-4">Client Reviews</div>
+<!-- ── CLIENT REVIEWS SECTION -->
+<div class="section-title mt-4">Client Reviews</div>
 
-    <!-- Write Review CTA -->
-    <div class="review-cta mt-3" onclick="openModal()">
+<div class="review-stats-row mt-2">
+  <div class="avg-rating-box">
+    <div class="avg-number" id="avgNumber">–</div>
+    <div class="avg-stars"  id="avgStars">☆☆☆☆☆</div>
+    <div class="avg-sub"    id="avgSub">No reviews yet</div>
+  </div>
+  <div class="keywords-box" id="keywordsBox">
+    <div class="kw-skeleton">Loading...</div>
+  </div>
+</div>
+
+    <div class="review-cta mt-2" onclick="openModal()">
       <div class="review-cta-btn">⭐ Write a Review</div>
-      <p>Share your experience with UKM Financial Hub</p>
+       <p>Share your experience with UKM Financial Hub</p>
     </div>
 
-    <!-- Dynamic reviews from DB -->
-    <div id="reviewsList" class="d-flex flex-column gap-3 mt-2">
-      <% if (reviews && reviews.length > 0) { %>
-        <% reviews.forEach(r => { %>
-          <div class="review-card">
-            <div class="stars"><%= '★'.repeat(r.stars) %><%= '☆'.repeat(5 - r.stars) %></div>
-            <p class="review-text">"<%= r.message %>"</p>
-            <div class="reviewer">
-              <div class="reviewer-avatar"><%= r.name.charAt(0).toUpperCase() %></div>
-              <div>
-                <div class="reviewer-name"><%= r.name %></div>
-                <div class="reviewer-loc"><%= r.location || 'West Bengal' %></div>
-              </div>
-            </div>
-          </div>
-        <% }); %>
-      <% } else { %>
-        <p class="text-center" style="color:var(--muted); font-size:13px; padding: 10px 0;">Be the first to leave a review!</p>
-      <% } %>
-    </div>
+<div id="reviewsList" class="d-flex flex-column gap-2 mt-3"></div>
+
+<div id="showMoreWrap" class="d-none mt-1 mb-2">
+  <button class="show-more-btn" id="showMoreBtn" onclick="loadMoreReviews()">
+    Show more reviews &nbsp;↓&nbsp;
+    <span class="remaining-badge" id="remainingBadge"></span>
+  </button>
+</div>
 
     <!-- Footer -->
     <div class="footer mt-4">
@@ -197,12 +196,13 @@
 
 </div><!-- /card-wrapper -->
 
-<!-- ── REVIEW MODAL ────────────────────────────────────────── -->
+<!-- REVIEW MODAL -->
 <div class="modal-overlay" id="reviewModal">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal()">✕</button>
     <h3 class="modal-title">Write a Review</h3>
 
+    <div class="modal-section-label">Your Rating *</div>
     <div class="modal-stars" id="starRow">
       <span class="modal-star" data-v="1">⭐</span>
       <span class="modal-star" data-v="2">⭐</span>
@@ -211,12 +211,20 @@
       <span class="modal-star" data-v="5">⭐</span>
     </div>
 
-    <input  class="modal-input" id="rName"    placeholder="Your name *" />
-    <input  class="modal-input" id="rLoc"     placeholder="Your city / location" />
-    <textarea class="modal-input" id="rText"  placeholder="Share your experience... *" rows="3"></textarea>
+    <div class="modal-section-label">What describes us best?</div>
+    <div class="kw-chips-row" id="kwChips">
+      <span class="kw-chip" data-kw="Trusted">Trusted</span>
+      <span class="kw-chip" data-kw="Claim Support">Claim Support</span>
+      <span class="kw-chip" data-kw="Expert Guidance">Expert Guidance</span>
+      <span class="kw-chip" data-kw="Friendly Service">Friendly Service</span>
+      <span class="kw-chip" data-kw="Transparency">Transparency</span>
+    </div>
+
+    <input  class="modal-input" id="rName" type="text" placeholder="Your full name *" />
+    <input  class="modal-input" id="rLoc"  type="text" placeholder="Your city / location" />
+    <textarea class="modal-input" id="rText" rows="3" placeholder="Share your experience... *"></textarea>
 
     <div id="formError" class="form-error d-none"></div>
-
     <button class="modal-submit" onclick="submitReview()">Submit Review</button>
   </div>
 </div>

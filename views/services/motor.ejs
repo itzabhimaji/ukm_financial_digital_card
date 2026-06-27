@@ -1,0 +1,82 @@
+<%- include('../partials/service-head', { pageTitle: 'Motor Insurance' }) %>
+
+<div class="svc-wrapper">
+
+  <div class="svc-back-bar">
+    <a href="/" class="svc-back-btn">&#8592;</a>
+    <div>
+      <div class="svc-back-title">Motor Insurance</div>
+      <div class="svc-back-sub">Car & Vehicle Protection</div>
+    </div>
+  </div>
+
+  <div class="svc-hero">
+    <div class="svc-hero-icon">🚗</div>
+    <h1 class="svc-hero-title">Drive With Confidence</h1>
+    <p class="svc-hero-sub">Comprehensive & Third Party Plans available</p>
+  </div>
+
+  <div class="sec-label">Why Motor Insurance?</div>
+  <div class="price-highlight-card">
+    <div class="price-big" style="font-size:18px;">Mandatory by Law 🇮🇳</div>
+    <div class="price-sub">Third party cover is legally required for all vehicles</div>
+  </div>
+
+  <div class="sec-label">Plan Types</div>
+  <div class="plan-card">
+    <div class="plan-name">🛡️ Comprehensive Plan</div>
+    <ul class="plan-pts">
+      <li>Own damage + third party cover</li>
+      <li>Cashless claim at 5,000+ garages</li>
+      <li>Zero depreciation add-on available</li>
+      <li>Engine & gearbox protection</li>
+      <li>Roadside assistance 24/7</li>
+      <li>Personal accident cover for owner</li>
+    </ul>
+  </div>
+  <div class="plan-card">
+    <div class="plan-name">📋 Third Party Plan</div>
+    <ul class="plan-pts">
+      <li>Mandatory by Motor Vehicles Act</li>
+      <li>Covers damage/injury to third party</li>
+      <li>Most affordable motor insurance</li>
+      <li>Unlimited liability for bodily injury</li>
+    </ul>
+  </div>
+
+  <div class="sec-label">Add-On Covers</div>
+  <div class="provider-row">
+    <div class="provider-chip">Zero Depreciation</div>
+    <div class="provider-chip">Engine Protect</div>
+    <div class="provider-chip">NCB Protect</div>
+    <div class="provider-chip">Return to Invoice</div>
+  </div>
+
+  <div class="sec-label">Get a Free Quote</div>
+  <div class="query-box">
+    <p class="query-title">📩 Motor Insurance Query</p>
+    <div class="mb-2"><input class="svc-input" id="mi-name"    type="text" placeholder="Your full name *" /></div>
+    <div class="mb-2"><input class="svc-input" id="mi-mobile"  type="tel"  placeholder="Mobile number *" /></div>
+    <div class="mb-2"><input class="svc-input" id="mi-vehicle" type="text" placeholder="Vehicle number (e.g. WB32AB1234)" /></div>
+    <div class="mb-2">
+      <select class="svc-input" id="mi-vtype">
+        <option value="Car">Car</option>
+        <option value="SUV">SUV</option>
+        <option value="Truck">Truck / Commercial</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="mb-2">
+      <select class="svc-input" id="mi-plan">
+        <option value="Not Sure">Select plan type</option>
+        <option value="Comprehensive">Comprehensive</option>
+        <option value="Third Party">Third Party</option>
+        <option value="Not Sure">Help me choose</option>
+      </select>
+    </div>
+    <div class="mb-3"><textarea class="svc-input" id="mi-query" rows="3" placeholder="Your query *"></textarea></div>
+    <div id="mi-error" class="form-err d-none"></div>
+    <button class="svc-submit-btn" onclick="submitQuery('mi')">Get Free Quote</button>
+  </div>
+
+<%- include('../partials/service-foot') %>

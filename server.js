@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const path = require("path");
 
 const reviewRoutes = require("./routes/reviews");
+const serviceRoutes = require("./routes/services");
 
 const app = express();
 
@@ -47,6 +48,7 @@ app.get("/", async (req, res) => {
 });
 
 app.use("/api/reviews", reviewRoutes);
+app.use("/services", serviceRoutes);
 
 // 404
 app.use((req, res) => res.status(404).json({ message: "Route not found" }));

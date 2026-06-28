@@ -108,8 +108,7 @@ function renderStats(stats) {
   var html = "";
   stats.keywordCounts.forEach(function (kw) {
     var pct = maxCount > 0 ? Math.round((kw.count / maxCount) * 100) : 0;
-    var shortLabel =
-      kw.label.length > 9 ? kw.label.slice(0, 8) + "…" : kw.label;
+    var shortLabel = kw.label;
     html +=
       '<div class="kw-row">' +
       '<span class="kw-label" title="' +

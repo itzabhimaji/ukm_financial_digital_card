@@ -1391,7 +1391,7 @@ body {
 /* ── Review Stats Row ──────────────────────────── */
 .card-wrapper .review-stats-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 3fr;
   gap: 10px;
 }
 
@@ -1431,11 +1431,12 @@ body {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(201, 168, 76, 0.15);
   border-radius: var(--radius);
-  padding: 11px 12px;
+  padding: 11px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 6px;
+  overflow: hidden;
 }
 .card-wrapper .kw-skeleton {
   font-size: 11px;
@@ -1449,14 +1450,17 @@ body {
 .card-wrapper .kw-label {
   font-size: 9px;
   color: var(--text);
-  width: 68px;
+  width: auto;
+  min-width: 72px;
+  max-width: 90px;
   flex-shrink: 0;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: visible;
+  text-overflow: unset;
 }
 .card-wrapper .kw-bar-wrap {
   flex: 1;
+  min-width: 30px;
   height: 4px;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 4px;
